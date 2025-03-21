@@ -1,0 +1,146 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ragul Ranjeeth - Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        #particles-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        .section {
+            padding: 100px 20px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <canvas id="particles-canvas"></canvas>
+
+    <nav class="fixed w-full bg-gray-800 p-6 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Ragul Ranjeeth</h1>
+            <div class="space-x-6">
+                <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
+                <a href="#experience" class="hover:text-blue-400 transition-colors">Experience</a>
+                <a href="#projects" class="hover:text-blue-400 transition-colors">Projects</a>
+                <a href="#education" class="hover:text-blue-400 transition-colors">Education</a>
+                <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section" id="intro">
+        <div class="container mx-auto text-center">
+            <h1 class="text-5xl font-bold mb-4">Ragul Ranjeeth</h1>
+            <p class="text-xl text-gray-400">Technical Program Manager | Full Stack Developer</p>
+        </div>
+    </section>
+
+    <section class="section bg-gray-800" id="experience">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold mb-8 text-center">Experience</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                
+                <div class="card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">Technical Program Manager</h3>
+                    <p class="text-gray-400 mb-2">iamneo.ai</p>
+                    <p class="text-sm text-blue-400 mb-2">Jan 2025 - Present</p>
+                    <p class="text-gray-300">Stand as a middleman between the Technical Content Development team and the Client to ensure effective delivery of deliverables.</p>
+                </div>
+                
+                <div class="card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">Technical Problem Setter</h3>
+                    <p class="text-gray-400 mb-2">iamneo.ai</p>
+                    <p class="text-sm text-blue-400 mb-2">Sept 2024 - Dec 2024</p>
+                    <p class="text-gray-300">Developed coding content for different universities in the tech stacks C, C++, Python, Java, SQL and worked on topics including DSA and OOPS.</p>
+                </div>
+                
+                <div class="card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">Web Developer Intern</h3>
+                    <p class="text-gray-400 mb-2">devtern</p>
+                    <p class="text-sm text-blue-400 mb-2">Oct 2023 - Dec 2023</p>
+                    <p class="text-gray-300">Developed basic web pages like product landing pages and to-do lists using HTML and CSS.</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Add other sections similarly for Projects, Education, etc. -->
+
+    <script>
+        // Three.js Scene Setup
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({
+            canvas: document.querySelector('#particles-canvas'),
+            alpha: true
+        });
+
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        // Add particles
+        const geometry = new THREE.BufferGeometry();
+        const vertices = [];
+        for (let i = 0; i < 5000; i++) {
+            vertices.push(
+                Math.random() * 2000 - 1000,
+                Math.random() * 2000 - 1000,
+                Math.random() * 2000 - 1000
+            );
+        }
+        geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+        const material = new THREE.PointsMaterial({ size: 2, color: 0x00ff00 });
+        const particles = new THREE.Points(geometry, material);
+        scene.add(particles);
+
+        camera.position.z = 1000;
+
+        // Animation
+        function animate() {
+            requestAnimationFrame(animate);
+            particles.rotation.x += 0.0001;
+            particles.rotation.y += 0.0001;
+            renderer.render(scene, camera);
+        }
+
+        // GSAP Animations
+        gsap.from("nav", { y: -100, opacity: 0, duration: 1 });
+        gsap.from(".section", { 
+            y: 50, 
+            opacity: 0, 
+            stagger: 0.2,
+            duration: 0.8,
+            ease: "power2.out" 
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Window Resize Handler
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        animate();
+    </script>
+</body>
+</html>

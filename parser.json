@@ -1,0 +1,100 @@
+{
+    "personalInfo": {
+        "name": "Ragul Ranjeeth",
+        "email": "ragulranjeethr@gmail.com",
+        "phone": "+91 9894381443",
+        "links": [
+            "github",
+            "LinkedIn"
+        ],
+        "address": "74x/9 SMR Layout, SM Palayam Road, GN Mills, Coimbatore - 641029"
+    },
+    "experience": [
+        {
+            "title": "Technical Program Manager",
+            "company": "iamneo.ai",
+            "startDate": "Jan 2025",
+            "endDate": "Present",
+            "description": "Stand as a middleman between the Technical Content Development team and the Client to ensure effective delivery of deliverables."
+        },
+        {
+            "title": "Technical Problem Setter",
+            "company": "iamneo.ai",
+            "startDate": "Sept 2024",
+            "endDate": "Dec 2024",
+            "description": "Developed coding content for different universities in the tech stacks C, C++, Python, Java, SQL and worked on topics including DSA and OOPS."
+        },
+        {
+            "title": "Web Developer Intern",
+            "company": "devtern",
+            "startDate": "Oct 2023",
+            "endDate": "Dec 2023",
+            "description": "Developed basic web pages like product landing pages and to-do lists using HTML and CSS."
+        }
+    ],
+    "projects": [
+        {
+            "title": "Smart Irrigation System using IoT",
+            "startDate": "Jan 2023",
+            "endDate": "May 2023",
+            "description": "Developed a system where plants are watered at the correct time using temperature sensors and water level sensors. Worked on the coding part and setting up the circuit."
+        },
+        {
+            "title": "Smart Water Mapping System",
+            "startDate": "Jan 2024",
+            "endDate": "May 2024",
+            "description": "Designed a system to monitor water cleanliness and allow consumers to address grievances. Worked on the Email.js component for grievance redressal, server creation using Express.js, and API integration."
+        }
+    ],
+    "technology": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Django",
+        "Spring Boot",
+        "React",
+        "C++",
+        "Java",
+        "Python",
+        "SQL",
+        "PL/SQL",
+        "Excel"
+    ],
+    "skills": [
+        "Program Management",
+        "Agile",
+        "Client Delivery",
+        "Cross-Team Collaboration"
+    ],
+    "courseWork": [
+        "DSA",
+        "OS",
+        "Computer Networks",
+        "DBMS",
+        "Deep Learning"
+    ],
+    "achievements": [
+        "Design Huddles (9/12), Android App Development",
+        "Project Presentation (5/10)"
+    ],
+    "education": [
+        {
+            "institution": "Sri Ramakrishna Engineering College",
+            "startDate": "Dec 2021",
+            "endDate": "May 2025",
+            "cgpa": "8.05"
+        },
+        {
+            "institution": "Vidya Vikasinni Matric HSS",
+            "level": "HSC",
+            "year": "2021",
+            "percentage": "90.5%"
+        },
+        {
+            "institution": "Vidya Vikasinni Matric HSS",
+            "level": "SSLC",
+            "year": "2019",
+            "percentage": "88.0%"
+        }
+    ]
+}
